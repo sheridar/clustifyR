@@ -1,0 +1,650 @@
+]0;jayhesselberth@:~/devel/clustifyR[?1034h
+[32mjayhesselberth@hurk [33m~/devel/clustifyR[35m[0m
+$ [K$ cd man/
+/Users/jayhesselberth/devel/clustifyR/man
+average_clusters.Rd    get_vargenes.Rd           pbmc4k_vargenes.Rd         plot_tsne.Rd
+binarize_expr.Rd       important_heatmap.Rd      pbmc5_markers.Rd           pretty_palette.Rd
+clustifyR.Rd           kl_divergence.Rd          pbmc5_matrix.Rd            reduce_expr_matrix.Rd
+clustify_seurat.Rd     matrixize_markers.Rd      pbmc5_meta.Rd              refine_clusters.Rd
+compare_lists.Rd       pbmc4k_avg.Rd             pbmc_bulk_matrix.Rd        run_cor.Rd
+compute_similarity.Rd  pbmc4k_markers.Rd         percent_clusters.Rd        select_gene_subset.Rd
+corr_coef.Rd           pbmc4k_markers_M3Drop.Rd  permutation_similarity.Rd  use_seurat_comp.Rd
+getPCAGenes.Rd         pbmc4k_matrix.Rd          plot_call.Rd
+get_best_str.Rd        pbmc4k_meta.Rd            plot_cor.Rd
+]0;jayhesselberth@:~/devel/clustifyR/man
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/man[35m[0m
+$ ll
+total 136K
+-rw-r--r-- 1 jayhesselberth staff  633 Sep  1 14:49 average_clusters.Rd
+-rw-r--r-- 1 jayhesselberth staff  367 Sep  1 14:49 binarize_expr.Rd
+-rw-r--r-- 1 jayhesselberth staff  799 Sep  1 15:08 clustifyR.Rd
+-rw-r--r-- 1 jayhesselberth staff 1.2K Sep  1 14:50 clustify_seurat.Rd
+-rw-r--r-- 1 jayhesselberth staff  780 Sep  1 14:49 compare_lists.Rd
+-rw-r--r-- 1 jayhesselberth staff  810 Sep  1 14:49 compute_similarity.Rd
+-rw-r--r-- 1 jayhesselberth staff  514 Sep  1 14:49 corr_coef.Rd
+-rw-r--r-- 1 jayhesselberth staff 1.1K Sep  1 14:49 getPCAGenes.Rd
+-rw-r--r-- 1 jayhesselberth staff  482 Sep  1 14:50 get_best_str.Rd
+-rw-r--r-- 1 jayhesselberth staff  445 Sep  1 14:49 get_vargenes.Rd
+-rw-r--r-- 1 jayhesselberth staff  713 Sep  1 14:49 important_heatmap.Rd
+-rw-r--r-- 1 jayhesselberth staff 1.2K Sep  1 14:49 kl_divergence.Rd
+-rw-r--r-- 1 jayhesselberth staff  990 Sep  1 14:50 matrixize_markers.Rd
+-rw-r--r-- 1 jayhesselberth staff  443 Sep  1 14:49 pbmc4k_avg.Rd
+-rw-r--r-- 1 jayhesselberth staff  409 Sep  1 14:49 pbmc4k_markers.Rd
+-rw-r--r-- 1 jayhesselberth staff  430 Sep  1 14:49 pbmc4k_markers_M3Drop.Rd
+-rw-r--r-- 1 jayhesselberth staff  408 Sep  1 14:49 pbmc4k_matrix.Rd
+-rw-r--r-- 1 jayhesselberth staff  375 Sep  1 14:49 pbmc4k_meta.Rd
+-rw-r--r-- 1 jayhesselberth staff  393 Sep  1 14:49 pbmc4k_vargenes.Rd
+-rw-r--r-- 1 jayhesselberth staff  421 Sep  1 14:49 pbmc5_markers.Rd
+-rw-r--r-- 1 jayhesselberth staff  414 Sep  1 14:49 pbmc5_matrix.Rd
+-rw-r--r-- 1 jayhesselberth staff  387 Sep  1 14:49 pbmc5_meta.Rd
+-rw-r--r-- 1 jayhesselberth staff  436 Sep  1 14:49 pbmc_bulk_matrix.Rd
+-rw-r--r-- 1 jayhesselberth staff  562 Sep  1 14:50 percent_clusters.Rd
+-rw-r--r-- 1 jayhesselberth staff  889 Sep  1 14:50 permutation_similarity.Rd
+-rw-r--r-- 1 jayhesselberth staff  545 Sep  1 14:49 plot_call.Rd
+-rw-r--r-- 1 jayhesselberth staff  642 Sep  1 14:50 plot_cor.Rd
+-rw-r--r-- 1 jayhesselberth staff  708 Sep  1 14:50 plot_tsne.Rd
+-rw-r--r-- 1 jayhesselberth staff  365 Sep  1 14:49 pretty_palette.Rd
+-rw-r--r-- 1 jayhesselberth staff  687 Sep  1 14:49 reduce_expr_matrix.Rd
+-rw-r--r-- 1 jayhesselberth staff 1.7K Sep  1 14:50 refine_clusters.Rd
+-rw-r--r-- 1 jayhesselberth staff  969 Sep  1 14:49 run_cor.Rd
+-rw-r--r-- 1 jayhesselberth staff  832 Sep  1 14:49 select_gene_subset.Rd
+-rw-r--r-- 1 jayhesselberth staff  678 Sep  1 14:50 use_seurat_comp.Rd
+]0;jayhesselberth@:~/devel/clustifyR/man
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/man[35m[0m
+$ rm -f *
+]0;jayhesselberth@:~/devel/clustifyR/man
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/man[35m[0m
+$  echo C3929EF2 && echo $HISTCONTROL && /usr/bin/env && echo 5A3851C2$ [Kcd ../R
+clustifyR.R           data.R               main.R                    reduce_matrix.R    utils.R
+compare_genelist.R    get_pca_genes.R      permutation_similarity.R  refine_clusters.R
+compute_similarity.R  important_heatmap.R  plot.R                    seurat_wrapper.R
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ grep percent_cluster *
+utils.R:percent_clusters <- function(mat, cluster_info,
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ [K$ [K$ cd ../vignettes/
+compare_methods.Rmd  gene_list.Rmd         overview.Rmd       refine_cluster.Rmd
+exploratory_pca.Rmd  get_recount_data.Rmd  random_forest.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ ll
+total 52K
+-rw-r--r-- 1 jayhesselberth staff 4.9K Sep  1 14:49 compare_methods.Rmd
+-rw-r--r-- 1 jayhesselberth staff 2.0K Sep  1 14:49 exploratory_pca.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.2K Sep  1 14:49 gene_list.Rmd
+-rw-r--r-- 1 jayhesselberth staff 1.4K Sep  1 14:49 get_recount_data.Rmd
+-rw-r--r-- 1 jayhesselberth staff 7.0K Sep  1 14:49 overview.Rmd
+-rw-r--r-- 1 jayhesselberth staff 8.1K Sep  1 14:49 random_forest.Rmd
+-rw-r--r-- 1 jayhesselberth staff 7.1K Sep  1 14:49 refine_cluster.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ mv vo  overview.Rmd cluster  ifyR.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ cd ..
+DESCRIPTION  NAMESPACE  README.Rmd  _pkgdown.yml  clustifyR.Rproj  [0m[01;34mdocs[0m/  [01;34mman[0m/    [01;34mvignettes[0m/
+LICENSE      [01;34mR[0m/         README.md   appveyor.yml  [01;34mdata[0m/            [01;34minst[0m/  [01;34mtests[0m/
+]0;jayhesselberth@:~/devel/clustifyR
+[32mjayhesselberth@hurk [33m~/devel/clustifyR[35m[0m
+$ rm -r f . A appveyor.yml 
+]0;jayhesselberth@:~/devel/clustifyR
+[32mjayhesselberth@hurk [33m~/devel/clustifyR[35m[0m
+$ [K$ cd R
+/Users/jayhesselberth/devel/clustifyR/R
+clustifyR.R           data.R               main.R                    reduce_matrix.R    utils.R
+compare_genelist.R    get_pca_genes.R      permutation_similarity.R  refine_clusters.R
+compute_similarity.R  important_heatmap.R  plot.R                    seurat_wrapper.R
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ grep Ser iurat     urt at*  *
+data.R:#' Marker genes identified by Seurat from single-cell RNA-seq PBMCs.
+data.R:#' variable genes identified by Seurat from single-cell RNA-seq PBMCs.
+data.R:#' Marker genes identified by Seurat from single-cell RNA-seq PBMCs from 5'end kit.
+seurat_wrapper.R:#' Wrapper to integate into Seurat workflow
+seurat_wrapper.R:    Seurat::AddMetaData(seurat_object, calls, "call")
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ cd ..
+DESCRIPTION  NAMESPACE  README.Rmd  _pkgdown.yml     [0m[01;34mdata[0m/  [01;34minst[0m/  [01;34mtests[0m/
+LICENSE      [01;34mR[0m/         README.md   clustifyR.Rproj  [01;34mdocs[0m/  [01;34mman[0m/   [01;34mvignettes[0m/
+]0;jayhesselberth@:~/devel/clustifyR
+[32mjayhesselberth@hurk [33m~/devel/clustifyR[35m[0m
+$ r grep Seurat *
+grep: R: Is a directory
+grep: data: Is a directory
+grep: docs: Is a directory
+grep: inst: Is a directory
+grep: man: Is a directory
+grep: tests: Is a directory
+grep: vignettes: Is a directory
+]0;jayhesselberth@:~/devel/clustifyR
+[32mjayhesselberth@hurk [33m~/devel/clustifyR[35m [2][0m
+$ cd vignettes/
+/Users/jayhesselberth/devel/clustifyR/vignettes
+clustifyR.Rmd        exploratory_pca.Rmd  get_recount_data.Rmd  refine_cluster.Rmd
+compare_methods.Rmd  gene_list.Rmd        random_forest.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ grep Seurat *
+clustifyR.Rmd:In this example, we take an example 10x Genomics 3' scRNA-seq dataset comprised of peripheral blood mononuclear cells from a healthy human donor and annotate the cell clusters (identified using `Seurat`) using bulk RNA-seq data derived from isolated PBMC cell populations. 
+clustifyR.Rmd:As the heatmap below shows, most cell types are accurately classified using the default correlation method (pearson) and a list of highly variable genes in the single cell dataset identified using `Seurat`'s VMR method.
+clustifyR.Rmd:# generate a dataframe of markers from Seurat (a common format)
+compare_methods.Rmd:1) Highly variable genes via Seurat
+gene_list.Rmd:An unranked gene list can be converted from Seurat::FindAllMarkers(), or assembled from vectors of genes, into a format as shown below:
+gene_list.Rmd:# from dataframe generated by Seurat
+gene_list.Rmd:# from dataframe generated by Seurat via SCE objects
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ grep library *
+clustifyR.Rmd:library(clustifyR)
+clustifyR.Rmd:library(ComplexHeatmap)
+clustifyR.Rmd:library(circlize)
+compare_methods.Rmd:library(clustifyR)
+exploratory_pca.Rmd:library(clustifyR)
+exploratory_pca.Rmd:library(ggplot2)
+gene_list.Rmd:library('dplyr')
+gene_list.Rmd:library('purrr')
+gene_list.Rmd:library('stringr')
+gene_list.Rmd:library("ComplexHeatmap")
+gene_list.Rmd:library(clustifyR)
+gene_list.Rmd:library(clustifyR)
+random_forest.Rmd:library(clustifyR)
+random_forest.Rmd:library(ggplot2)
+random_forest.Rmd:library(Matrix)
+random_forest.Rmd:library(lattice)
+random_forest.Rmd:library(randomForest)
+random_forest.Rmd:library(caret)
+random_forest.Rmd:library(mlbench)
+random_forest.Rmd:library(e1071)
+random_forest.Rmd:customRF <- list(type = "Classification", library = "randomForest", loop = NULL)
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ [K$ li  c ll
+total 60K
+-rw-r--r-- 1 jayhesselberth staff 7.0K Sep  2 08:44 clustifyR.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.9K Sep  1 14:49 compare_methods.Rmd
+-rw-r--r-- 1 jayhesselberth staff 2.0K Sep  1 14:49 exploratory_pca.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.2K Sep  1 14:49 gene_list.Rmd
+-rw-r--r-- 1 jayhesselberth staff 1.4K Sep  1 14:49 get_recount_data.Rmd
+-rw-r--r-- 1 jayhesselberth staff 7.0K Sep  2 08:45 overview.Rmd
+-rw-r--r-- 1 jayhesselberth staff 8.1K Sep  1 14:49 random_forest.Rmd
+-rw-r--r-- 1 jayhesselberth staff 7.1K Sep  1 14:49 refine_cluster.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ mv    mv overview.Rmd C clustifyR.m Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ [K$ ll
+total 52K
+-rw-r--r-- 1 jayhesselberth staff 7.0K Sep  2 08:45 clustifyR.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.9K Sep  1 14:49 compare_methods.Rmd
+-rw-r--r-- 1 jayhesselberth staff 2.0K Sep  1 14:49 exploratory_pca.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.2K Sep  1 14:49 gene_list.Rmd
+-rw-r--r-- 1 jayhesselberth staff 1.4K Sep  1 14:49 get_recount_data.Rmd
+-rw-r--r-- 1 jayhesselberth staff 8.1K Sep  1 14:49 random_forest.Rmd
+-rw-r--r-- 1 jayhesselberth staff 7.1K Sep  1 14:49 refine_cluster.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ pkgdown::brew install gcc
+bash: pkgdown::brew: command not found
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [127][0m
+$ brew install gcc
+Updating Homebrew...
+[34m==>[0m [1mAuto-updated Homebrew![0m
+Updated 5 taps (homebrew/cask-versions, homebrew/core, homebrew/cask, osgeo/osgeo4mac, brewsci/bio).
+[34m==>[0m [1mNew Formulae[0m
+bloaty                    brewsci/bio/express       cwlogs                    wcslib
+brewsci/bio/ale           brewsci/bio/fraggenescan  rbspy                     wsk
+brewsci/bio/cutadapt      brewsci/bio/sumaclust     topgrade
+[34m==>[0m [1mUpdated Formulae[0m
+[1mbison [32m✔[0m[0m                   cimg                      grafana                   openblas
+[1mfontconfig [32m✔[0m[0m              circleci                  gsoap                     openrct2
+[1mglib [32m✔[0m[0m                    cmocka                    hadolint                  osgeo/osgeo4mac/qgis3
+[1mgobject-introspection [32m✔[0m[0m   deployer                  hebcal                    p11-kit
+[1mhugo [32m✔[0m[0m                    django-completion         helmfile                  phpunit
+[1mimagemagick [32m✔[0m[0m             docker-completion         heroku                    picard-tools
+alexjs                    docker-compose            htmldoc                   presto
+anjuta                    docker-squash             imagemagick@6             pumba
+artifactory               doctl                     jadx                      pyside
+atlassian-cli             duo_unix                  jfrog-cli-go              re2c
+autopep8                  elm-format                juju                      sbcl
+azure-cli                 erlang                    kapacitor                 smlnj
+babel                     erlang@20                 knot                      sourcekitten
+bat                       exercism                  kore                      sourcery
+bear                      faas-cli                  ldc                       sphinx-doc
+brewsci/bio/bioperl       fauna-shell               lftp                      tarsnap-gui
+brewsci/bio/circos        flatcc                    librtlsdr                 telegraf
+brewsci/bio/maker         flow                      liquigraph                terragrunt
+brewsci/bio/meme          fn                        lolcat                    tokei
+brewsci/bio/mlst          fortio                    mackup                    typescript
+brewsci/bio/nanopolish    freetds                   mdp                       vagrant-completion
+brewsci/bio/quicktree     ghostscript               media-info                vala
+brewsci/bio/repeatmasker  git-archive-all           mill                      valabind
+brewsci/bio/tigmint       gitlab-runner             minimesos                 vault
+bro                       gitup                     mkvtoolnix                wireshark
+buku                      gnatsd                    monax                     wp-cli-completion
+bwfmetaedit               gnupg                     monetdb                   xonsh
+calabash                  gobuster                  nginx                     youtube-dl
+capnp                     gomplate                  nspr
+cataclysm                 goreleaser                ocrmypdf
+chakra                    gradle                    openapi-generator
+
+[33mWarning:[0m gcc 8.2.0 is already installed and up-to-date
+To reinstall 8.2.0, run `brew reinstall gcc`
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ brew search openmp
+[34m==>[0m [1mFormulae[0m
+open-mpi
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ grep caret *
+random_forest.Rmd:library(caret)
+random_forest.Rmd:# Tune model using caret
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ il  locate omp.h
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/Headers/OSAComp.h
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/netinet6/ipcomp.h
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/netinet6/ipcomp.h
+/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/Headers/OSAComp.h
+/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/netinet6/ipcomp.h
+/System/Library/Perl/5.18/darwin-thread-multi-2level/CORE/regcomp.h
+/Users/jayhesselberth/devel/ggplot2/docs/reference/fortify-multcomp.html
+/Users/jayhesselberth/devel/ggplot2-search/docs/reference/fortify-multcomp.html
+/Users/jayhesselberth/src/EMBOSS-6.6.0/doc/programs/html/oddcomp.html
+/Users/jayhesselberth/src/EMBOSS-6.6.0/doc/programs/master/emboss/apps/inc/oddcomp.history
+/Users/jayhesselberth/src/EMBOSS-6.6.0/doc/programs/master/emboss/apps/oddcomp.html
+/usr/include/netinet6/ipcomp.h
+/usr/local/Cellar/armadillo/9.100.5/include/armadillo_bits/fn_princomp.hpp
+/usr/local/Cellar/armadillo/9.100.5_1/include/armadillo_bits/fn_princomp.hpp
+/usr/local/Cellar/boost/1.67.0_1/include/boost/intrusive/detail/key_nodeptr_comp.hpp
+/usr/local/Cellar/gcc/7.1.0/lib/gcc/7/gcc/x86_64-apple-darwin16.5.0/7.1.0/include/omp.h
+/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/include/omp.h
+/usr/local/Cellar/gcc/7.2.0_1/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.2.0/include/omp.h
+/usr/local/Cellar/gcc/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.3.0/include/omp.h
+/usr/local/Cellar/gcc/7.3.0_1/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.3.0/include/omp.h
+/usr/local/Cellar/gcc/8.1.0/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0/include/omp.h
+/usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin17.7.0/8.2.0/include/omp.h
+/usr/local/Cellar/gcc@4.9/4.9.4_1/lib/gcc/4.9/gcc/x86_64-apple-darwin17.3.0/4.9.4/include/omp.h
+/usr/local/Cellar/node/10.0.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/10.2.1/include/node/openssl/comp.h
+/usr/local/Cellar/node/10.3.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/10.5.0_1/include/node/openssl/comp.h
+/usr/local/Cellar/node/10.6.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/10.7.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/10.9.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/8.6.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/8.7.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/8.8.1/include/node/openssl/comp.h
+/usr/local/Cellar/node/8.9.1/include/node/openssl/comp.h
+/usr/local/Cellar/node/9.10.1/include/node/openssl/comp.h
+/usr/local/Cellar/node/9.11.1/include/node/openssl/comp.h
+/usr/local/Cellar/node/9.3.0_1/include/node/openssl/comp.h
+/usr/local/Cellar/node/9.4.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/9.5.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/9.6.1/include/node/openssl/comp.h
+/usr/local/Cellar/node/9.8.0/include/node/openssl/comp.h
+/usr/local/Cellar/node/9.9.0/include/node/openssl/comp.h
+/usr/local/Cellar/openjpeg/2.1.2_1/share/doc/html/structopj__image__comp.html
+/usr/local/Cellar/openjpeg/2.1.2_1/share/doc/html/structopj__jp2__cmap__comp.html
+/usr/local/Cellar/openjpeg/2.1.2_1/share/doc/html/structopj__pi__comp.html
+/usr/local/Cellar/openjpeg/2.1.2_1/share/doc/html/structopj__tcd__tilecomp.html
+/usr/local/Cellar/openjpeg/2.2.0/share/doc/html/structopj__image__comp.html
+/usr/local/Cellar/openjpeg/2.2.0/share/doc/html/structopj__jp2__cmap__comp.html
+/usr/local/Cellar/openjpeg/2.2.0/share/doc/html/structopj__pi__comp.html
+/usr/local/Cellar/openjpeg/2.2.0/share/doc/html/structopj__tcd__tilecomp.html
+/usr/local/Cellar/openjpeg/2.3.0/share/doc/html/structopj__image__comp.html
+/usr/local/Cellar/openjpeg/2.3.0/share/doc/html/structopj__jp2__cmap__comp.html
+/usr/local/Cellar/openjpeg/2.3.0/share/doc/html/structopj__pi__comp.html
+/usr/local/Cellar/openjpeg/2.3.0/share/doc/html/structopj__tcd__tilecomp.html
+/usr/local/Cellar/openssl/1.0.2l/include/openssl/comp.h
+/usr/local/Cellar/openssl/1.0.2m/include/openssl/comp.h
+/usr/local/Cellar/openssl/1.0.2n/include/openssl/comp.h
+/usr/local/Cellar/openssl/1.0.2o_2/include/openssl/comp.h
+/usr/local/Cellar/openssl/1.0.2p/include/openssl/comp.h
+/usr/local/Cellar/openssl@1.1/1.1.0f/include/openssl/comp.h
+/usr/local/Cellar/openssl@1.1/1.1.0g/include/openssl/comp.h
+/usr/local/Cellar/openssl@1.1/1.1.0g_1/include/openssl/comp.h
+/usr/local/Cellar/openssl@1.1/1.1.0h/include/openssl/comp.h
+/usr/local/Cellar/openssl@1.1/1.1.0i/include/openssl/comp.h
+/usr/local/Cellar/perl/5.26.0/lib/perl5/5.26.0/darwin-thread-multi-2level/CORE/regcomp.h
+/usr/local/Cellar/perl/5.26.1/lib/perl5/5.26.1/darwin-thread-multi-2level/CORE/regcomp.h
+/usr/local/Cellar/perl/5.26.2/lib/perl5/5.26.2/darwin-thread-multi-2level/CORE/regcomp.h
+/usr/local/Cellar/perl/5.28.0/lib/perl5/5.28.0/darwin-thread-multi-2level/CORE/regcomp.h
+/usr/local/Cellar/rust/1.27.2/share/rust/rust_src/vendor/libssh2-sys/libssh2/src/comp.h
+/usr/local/Cellar/rust/1.28.0/share/rust/rust_src/vendor/libssh2-sys/libssh2/src/comp.h
+/usr/local/lib/R/3.4/site-library/BH/include/boost/intrusive/detail/key_nodeptr_comp.hpp
+/usr/local/lib/R/3.4/site-library/RcppArmadillo/include/armadillo_bits/fn_princomp.hpp
+/usr/local/lib/R/3.5/site-library/BH/include/boost/intrusive/detail/key_nodeptr_comp.hpp
+/usr/local/lib/R/3.5/site-library/RcppArmadillo/include/armadillo_bits/fn_princomp.hpp
+/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.7.0/8.2.0/include/omp.h
+/usr/local/lib/perl5/5.28.0/darwin-thread-multi-2level/CORE/regcomp.h
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ locate omp.h[1@/
+/usr/local/Cellar/gcc/7.1.0/lib/gcc/7/gcc/x86_64-apple-darwin16.5.0/7.1.0/include/omp.h
+/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/include/omp.h
+/usr/local/Cellar/gcc/7.2.0_1/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.2.0/include/omp.h
+/usr/local/Cellar/gcc/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.3.0/include/omp.h
+/usr/local/Cellar/gcc/7.3.0_1/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.3.0/include/omp.h
+/usr/local/Cellar/gcc/8.1.0/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0/include/omp.h
+/usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin17.7.0/8.2.0/include/omp.h
+/usr/local/Cellar/gcc@4.9/4.9.4_1/lib/gcc/4.9/gcc/x86_64-apple-darwin17.3.0/4.9.4/include/omp.h
+/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.7.0/8.2.0/include/omp.h
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ vim ` ~/.Rhistory    
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ mkdir ~/.R
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ vim ~/.R/Makevars
+[?2004h]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ vim ~/.R/Makevars$ [7Pmkdir ~/.R$ locate /omp.h
+/usr/local/Cellar/gcc/7.1.0/lib/gcc/7/gcc/x86_64-apple-darwin16.5.0/7.1.0/include/omp.h
+/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/include/omp.h
+/usr/local/Cellar/gcc/7.2.0_1/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.2.0/include/omp.h
+/usr/local/Cellar/gcc/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.3.0/include/omp.h
+/usr/local/Cellar/gcc/7.3.0_1/lib/gcc/7/gcc/x86_64-apple-darwin17.3.0/7.3.0/include/omp.h
+/usr/local/Cellar/gcc/8.1.0/lib/gcc/8/gcc/x86_64-apple-darwin17.5.0/8.1.0/include/omp.h
+/usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin17.7.0/8.2.0/include/omp.h
+/usr/local/Cellar/gcc@4.9/4.9.4_1/lib/gcc/4.9/gcc/x86_64-apple-darwin17.3.0/4.9.4/include/omp.h
+/usr/local/lib/gcc/8/gcc/x86_64-apple-darwin17.7.0/8.2.0/include/omp.h
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ gcc --versino
+clang: [0;1;31merror: [0munsupported option '--versino'[0m
+clang: [0;1;31merror: [0mno input files[0m
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [1][0m
+$ gcc --versino   ion
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ xcode-select --install
+xcode-select: error: command line tools are already installed, use "Software Update" to install updates
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [1][0m
+$ 
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [1][0m
+$ xcode-select --install
+xcode-select: error: command line tools are already installed, use "Software Update" to install updates
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [1][0m
+$ 
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [1][0m
+$ brew link gcc
+[33mWarning:[0m Already linked: /usr/local/Cellar/gcc/8.2.0
+To relink: brew unlink gcc && brew link gcc
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ gcc
+gcc             gcc-8           gcc-ar-8        gcc-nm-8        gcc-ranlib-8    
+gcc-4.9         gcc-ar-4.9      gcc-nm-4.9      gcc-ranlib-4.9  gccmakedep      
+
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ gcc-8
+[01m[Kgcc-8:[m[K [01;31m[Kfatal error: [m[Kno input files
+compilation terminated.
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [1][0m
+$ g++-8
+[01m[Kg++-8:[m[K [01;31m[Kfatal error: [m[Kno input files
+compilation terminated.
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [1][0m
+$ g++-8cc-8$ brew link gcc]0;jayhesselberth@:~/devel/clustifyR/vignettes[?1034h
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+ll
+total 52K
+-rw-r--r-- 1 jayhesselberth staff 7.0K Sep  2 08:49 clustifyR.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.9K Sep  1 14:49 compare_methods.Rmd
+-rw-r--r-- 1 jayhesselberth staff 2.0K Sep  1 14:49 exploratory_pca.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.2K Sep  2 08:55 gene_list.Rmd
+-rw-r--r-- 1 jayhesselberth staff 1.4K Sep  1 14:49 get_recount_data.Rmd
+-rw-r--r-- 1 jayhesselberth staff 8.1K Sep  1 14:49 random_forest.Rmd
+-rw-r--r-- 1 jayhesselberth staff 7.1K Sep  1 14:49 refine_cluster.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ grep NCBI *
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [1][0m
+$ cd ..
+DESCRIPTION  [0m[01;34mR[0m/          [01;34mREADME_files[0m/  clustifyR.Rproj  [01;34mdocs[0m/  [01;34mtests[0m/
+LICENSE      README.Rmd  _pkgdown.yml   codecov.yml      [01;34minst[0m/  [01;34mvignettes[0m/
+NAMESPACE    README.md   appveyor.yml   [01;34mdata[0m/            [01;34mman[0m/
+]0;jayhesselberth@:~/devel/clustifyR
+[32mjayhesselberth@hurk [33m~/devel/clustifyR[35m[0m
+$ grep NCBI *
+LICENSE:Copyright (c) 2018 NCBI-Hackathons
+grep: R: Is a directory
+README.Rmd:[![Build Status](https://travis-ci.org/NCBI-Hackathons/clustifyR.svg?branch=master)](https://travis-ci.org/NCBI-Hackathons/clustifyR)
+README.Rmd:[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/NCBI-Hackathons/clustifyR?branch=master&svg=true)](https://ci.appveyor.com/project/NCBI-Hackathons/clustifyR)
+README.Rmd:[![Coverage status](https://codecov.io/gh/NCBI-Hackathons/clustifyR/branch/master/graph/badge.svg)](https://codecov.io/github/NCBI-Hackathons/clustifyR?branch=master)
+README.Rmd:devtools::install_github("NCBI-Hackathons/clustifyR")
+README.md:Status](https://travis-ci.org/NCBI-Hackathons/clustifyR.svg?branch=master)](https://travis-ci.org/NCBI-Hackathons/clustifyR)
+README.md:status](https://ci.appveyor.com/api/projects/status/github/NCBI-Hackathons/clustifyR?branch=master&svg=true)](https://ci.appveyor.com/project/NCBI-Hackathons/clustifyR)
+README.md:status](https://codecov.io/gh/NCBI-Hackathons/clustifyR/branch/master/graph/badge.svg)](https://codecov.io/github/NCBI-Hackathons/clustifyR?branch=master)
+README.md:devtools::install_github("NCBI-Hackathons/clustifyR")
+grep: README_files: Is a directory
+grep: data: Is a directory
+grep: docs: Is a directory
+grep: inst: Is a directory
+grep: man: Is a directory
+grep: tests: Is a directory
+grep: vignettes: Is a directory
+]0;jayhesselberth@:~/devel/clustifyR
+[32mjayhesselberth@hurk [33m~/devel/clustifyR[35m [2][0m
+$ grep binarize *
+NAMESPACE:export(binarize_expr)
+grep: R: Is a directory
+grep: data: Is a directory
+grep: docs: Is a directory
+grep: inst: Is a directory
+grep: man: Is a directory
+grep: tests: Is a directory
+grep: vignettes: Is a directory
+]0;jayhesselberth@:~/devel/clustifyR
+[32mjayhesselberth@hurk [33m~/devel/clustifyR[35m [2][0m
+$ cd R
+/Users/jayhesselberth/devel/clustifyR/R
+clustifyR.R           data.R               main.R                    reduce_matrix.R    utils.R
+compare_genelist.R    get_pca_genes.R      permutation_similarity.R  refine_clusters.R
+compute_similarity.R  important_heatmap.R  plot.R                    seurat_wrapper.R
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ cd R$ grep binarize *
+compare_genelist.R:binarize_expr <- function(expr_mat,
+compare_genelist.R:#' @param bin_mat binarized single-cell expression matrix
+compare_genelist.R:  # check if matrix is binarized
+reduce_matrix.R:#' Reduce expression matrix to variable genes and binarize.
+utils.R:#' @param best_mat binarized call matrix
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ 
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ styler::syl           mv clustifyR.R clustifyR.R     -package.r R
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ mv clustify-package.R clustify-package.R [1@R
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ ll
+total 64K
+-rw-r--r-- 1 jayhesselberth staff  424 Sep  3 07:25 clustifyR-package.R
+-rw-r--r-- 1 jayhesselberth staff 6.5K Sep  2 20:01 compare_genelist.R
+-rw-r--r-- 1 jayhesselberth staff 3.8K Sep  2 20:01 compute_similarity.R
+-rw-r--r-- 1 jayhesselberth staff 2.3K Sep  1 14:49 data.R
+-rw-r--r-- 1 jayhesselberth staff 1.6K Sep  2 20:01 get_pca_genes.R
+-rw-r--r-- 1 jayhesselberth staff 2.4K Sep  2 20:01 important_heatmap.R
+-rw-r--r-- 1 jayhesselberth staff 1.3K Sep  2 20:01 main.R
+-rw-r--r-- 1 jayhesselberth staff 2.8K Sep  1 15:02 permutation_similarity.R
+-rw-r--r-- 1 jayhesselberth staff 3.3K Sep  2 20:01 plot.R
+-rw-r--r-- 1 jayhesselberth staff 1.3K Sep  1 15:02 reduce_matrix.R
+-rw-r--r-- 1 jayhesselberth staff 5.4K Sep  2 20:01 refine_clusters.R
+-rw-r--r-- 1 jayhesselberth staff 4.1K Sep  2 20:01 seurat_wrapper.R
+-rw-r--r-- 1 jayhesselberth staff 2.6K Sep  1 15:10 utils.R
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ mv main.R clustid fy.R
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ v [K$ grep run_cor *
+compare_genelist.R:#' @description Variable gene list is required for run_cor main function. This
+seurat_wrapper.R:  res <- run_cor(expr_mat,
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ grep clusityf    tify_sru  eurat
+^C
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m [130][0m
+$ grep clustify_seurat *
+seurat_wrapper.R:clustify_seurat <- function(seurat_object,
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ [K$ [K$ grep refine_clusters *
+refine_clusters.R:refine_clusters <- function(expr_mat, sc_cluster, bulk_mat, lambda = 0.5, epsilon = 1,
+refine_clusters.R:    error("refine_clusters: there are more bulk samples than clusters")
+refine_clusters.R:      warning(paste("refine_clusters: iteration ", curr_num_iteration, " some clusters are degenerated.", sep = ""))
+refine_clusters.R:      message(paste("refine_clusters: converged after ", curr_num_iteration, " iterations.", sep = ""))
+refine_clusters.R:      warning("refine_clusters: reach maximal number of iterations. Clustering fails to converge.")
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ [K$ [K$ cd ../      grep run_cor *
+compare_genelist.R:#' @description Variable gene list is required for run_cor main function. This
+seurat_wrapper.R:  res <- run_cor(expr_mat,
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ cd ../vignettes/
+clustifyR.Rmd        exploratory_pca.Rmd  get_recount_data.Rmd  refine_cluster.Rmd
+compare_methods.Rmd  gene_list.Rmd        random_forest.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ ll
+total 52K
+-rw-r--r-- 1 jayhesselberth staff 6.9K Sep  2 20:07 clustifyR.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.9K Sep  1 14:49 compare_methods.Rmd
+-rw-r--r-- 1 jayhesselberth staff 2.0K Sep  1 14:49 exploratory_pca.Rmd
+-rw-r--r-- 1 jayhesselberth staff 4.2K Sep  2 08:55 gene_list.Rmd
+-rw-r--r-- 1 jayhesselberth staff 1.4K Sep  1 14:49 get_recount_data.Rmd
+-rw-r--r-- 1 jayhesselberth staff 8.1K Sep  1 14:49 random_forest.Rmd
+-rw-r--r-- 1 jayhesselberth staff 7.1K Sep  1 14:49 refine_cluster.Rmd
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ grep run_cor
+^C
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m [130][0m
+$ grep run_cor *
+clustifyR.Rmd:`clustifyR` provides the `run_cor()` function, which takes as input a matrix of single cell RNA-seq expression values, a metadata table with cluster assignments, and a matrix with bulk RNA seq datasets. 
+clustifyR.Rmd:res <- run_cor(expr_mat = pbmc4k_matrix,
+clustifyR.Rmd:res <- run_cor(expr_mat = pbmc4k_matrix,
+clustifyR.Rmd:In addition to automatically generating a correlation matrix, `clustifyR` can calculate correlation p-values using permutation with the `run_cor()` function. As with raw correlation coefficients, plotting a heatmap of -log(p-values) demonstrates that the most significant correlations are between corresponding bulk and single cell clusters.
+clustifyR.Rmd:# re-run run_cor with if_permute = TRUE, num_permute=1000 and return_full = TRUE
+clustifyR.Rmd:res <- run_cor(pbmc4k_matrix,
+compare_methods.Rmd:cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+compare_methods.Rmd:vargenes_cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+compare_methods.Rmd:markers_cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+compare_methods.Rmd:m3drop_cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+compare_methods.Rmd:pca_cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+refine_cluster.Rmd:where $S(\vec{x\ }, \vec{B_i})$ represents the similarity score between $\vec{x\ }$ and $\vec{B_i}$. One example of similarity score is the correlation computed by *run_cor* function. For clusters without reference data, we assign a default similarity score. $\epsilon$ is a user-defined weighting parameter. 
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ [K$ grep run_cor *
+compare_methods.Rmd:cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+compare_methods.Rmd:vargenes_cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+compare_methods.Rmd:markers_cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+compare_methods.Rmd:m3drop_cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+compare_methods.Rmd:pca_cor_mat <- run_cor(expr_mat = pbmc4k_matrix,
+refine_cluster.Rmd:where $S(\vec{x\ }, \vec{B_i})$ represents the similarity score between $\vec{x\ }$ and $\vec{B_i}$. One example of similarity score is the correlation computed by *run_cor* function. For clusters without reference data, we assign a default similarity score. $\epsilon$ is a user-defined weighting parameter. 
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ vim compare_methods.Rmd 
+[?2004h]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ [K$ [K$ vim compare_methods.Rmd 
+[?2004h]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ vim compare_methods.Rmd $ [10Pgrep run_cor *
+refine_cluster.Rmd:where $S(\vec{x\ }, \vec{B_i})$ represents the similarity score between $\vec{x\ }$ and $\vec{B_i}$. One example of similarity score is the correlation computed by *run_cor* function. For clusters without reference data, we assign a default similarity score. $\epsilon$ is a user-defined weighting parameter. 
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ [K$ [K$ [K$ grep important_ *
+random_forest.Rmd:# source('important_heatmap.R')
+random_forest.Rmd:important_heatmap(important, pbmc4k_avg, pbmc4k_meta, 20, 30)
+]0;jayhesselberth@:~/devel/clustifyR/vignettes
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/vignettes[35m[0m
+$ grep compute            cd ../. R
+clustify.R           compute_similarity.R  important_heatmap.R       reduce_matrix.R    utils.R
+clustifyR-package.R  data.R                permutation_similarity.R  refine_clusters.R
+compare_genelist.R   get_pca_genes.R       plot.R                    seurat_wrapper.R
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ grep compute_method *
+clustify.R:#' @param compute_method method(s) for computing similarity scores
+clustify.R:#' @param ... additional arguments to pass to compute_method function
+clustify.R:clustify <- function(expr_mat, metadata, bulk_mat, query_gene_list, compute_method, per_cell = FALSE,
+clustify.R:                     num_perm = 0, return_full = FALSE, compute_method, ...) {
+clustify.R:    num_perm, per_cell, compute_method, ...
+compute_similarity.R:#' @param compute_method method to run i.e. corr_coef
+compute_similarity.R:#' @param ... arguments to pass to compute_method function
+compute_similarity.R:compute_similarity <- function(vec1, vec2, compute_method, ...) {
+compute_similarity.R:  return(compute_method(vec1, vec2, ...))
+permutation_similarity.R:#' @param compute_method method(s) for computing similarity scores
+permutation_similarity.R:                                   compute_method, cluster_col = "cluster", ...) {
+permutation_similarity.R:    compute_method,
+permutation_similarity.R:        compute_method,
+permutation_similarity.R:run_one_round <- function(sc_avg, bulk_mat, sc_clust, bulk_clust, compute_method, ...) {
+permutation_similarity.R:      similarity_score[i, j] <- compute_similarity(sc_avg[, sc_clust[i]], bulk_mat[, bulk_clust[j]], compute_method, ...)
+refine_clusters.R:#' @param compute_method corr_coef
+refine_clusters.R:                            cluster_names = NULL, compute_method, ...) {
+refine_clusters.R:  bulk_info <- compute_bulk_score(expr_mat, bulk_mat, num_cluster, default_similiarity, compute_method, ...) # the bulk info has nothing to do with current clusters
+refine_clusters.R:compute_bulk_score <- function(expr_mat, bulk_mat, num_cluster, default_similiarity, compute_method, ...) {
+refine_clusters.R:    bulk_score[i, ] <- sapply(1:num_bulk, function(x) compute_similarity(curr_cell_expr, bulk_mat[, x], compute_method, ...))
+seurat_wrapper.R:#' @param compute_method method(s) for computing similarity scores
+seurat_wrapper.R:#' @param ... additional arguments to pass to compute_method function
+seurat_wrapper.R:                            compute_method = corr_coef,
+seurat_wrapper.R:    compute_method = compute_method,
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ [K$ ]0;jayhesselberth@:~/devel/clustifyR/R[?1034h
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+]0;jayhesselberth@:~/devel/clustifyR/R[?1034h
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+]0;jayhesselberth@:~/devel/clustifyR/R[?1034h
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+[K$ git merge origin master
+Removing travis_setup.sh
+hint: Waiting for your editor to close the file... [?2004h[KMerge made by the 'recursive' strategy.
+ .travis.yml     |  8 [32m+[m[31m-------[m
+ travis_setup.sh | 19 [31m-------------------[m
+ 2 files changed, 1 insertion(+), 26 deletions(-)
+ delete mode 100644 travis_setup.sh
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ git push
+Enumerating objects: 4, done.
+Counting objects:  25% (1/4)   Counting objects:  50% (2/4)   Counting objects:  75% (3/4)   Counting objects: 100% (4/4)   Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads.
+Compressing objects:  50% (1/2)   Compressing objects: 100% (2/2)   Compressing objects: 100% (2/2), done.
+Writing objects:  50% (1/2)   Writing objects: 100% (2/2)   Writing objects: 100% (2/2), 317 bytes | 317.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/1)   [Kremote: Resolving deltas: 100% (1/1)   [Kremote: Resolving deltas: 100% (1/1), completed with 1 local object.[K
+To github.com:rnabioco/clustifyR.git
+   6c5ddaf..372703c  rename-funcs -> rename-funcs
+]0;jayhesselberth@:~/devel/clustifyR/R
+[32mjayhesselberth@hurk [33m~/devel/clustifyR/R[35m[0m
+$ [K$ 
