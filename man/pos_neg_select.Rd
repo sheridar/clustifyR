@@ -37,10 +37,10 @@ adapt clustify to tweak score for pos and neg markers
   )
 
   res <- pos_neg_select(
-    pbmc_matrix_small,
-    pn_ref,
-    pbmc_meta,
-    "classified",
+    input = pbmc_matrix_small,
+    ref_mat = pn_ref,
+    metadata = pbmc_meta,
+    cluster_col = "classified",
     cutoff_score = 0.8
   )
 }

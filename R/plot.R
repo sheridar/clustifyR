@@ -15,6 +15,10 @@
 #' @param do_label whether to label each cluster at median center
 #' @param do_legend whether to draw legend
 #' @return ggplot object, cells projected by dr, colored by feature
+#' @examples
+plot_tsne(
+  data = s_small3,
+  feature = "classified")
 #' @export
 plot_tsne <- function(data, x = "UMAP_1", y = "UMAP_2",
                       feature,
@@ -316,7 +320,7 @@ plot_best_call <- function(cor_matrix,
     cluster_col = cluster_col,
     threshold = threshold
   )
-  
+
   df_temp_full <- call_to_metadata(
     df_temp,
     metadata = metadata,

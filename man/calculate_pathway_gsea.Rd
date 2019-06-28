@@ -31,7 +31,7 @@ Convert expression matrix to GSEA pathway scores (would take a similar place in 
 )
 
 calculate_pathway_gsea(
-  pbmc_matrix_small,
-  gl
+  mat = pbmc_matrix_small,
+  pathway_list = gl
 )}
 }
